@@ -34,6 +34,7 @@ gem 'pry-byebug'
 gem 'annotate'
 gem "bulma-rails", "~> 0.4.2"
 gem 'jquery-rails'
+gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

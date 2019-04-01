@@ -1,13 +1,14 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "chat_channel"
+    stream_from "room_channel"
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
 
+  #サーバーサイドのspeakアクションの定義
   def speak(data)
-    ActionCable.server.broadcast('chat_channel', data)
+    Message.create!(content: data['message'])
   end
 end
